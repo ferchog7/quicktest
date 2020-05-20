@@ -1,3 +1,5 @@
+import csv
+
 from django.http import Http404, HttpResponse
 from rest_framework import status
 from rest_framework.response import Response
@@ -58,17 +60,21 @@ class ClientReportList(MixinAuth):
     List report with all clients info.
     """
     def get(self, request, format=None): 
-        result = []
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="somefilename.csv"'
+        writer = csv.writer(response)
+        writer.writerow(['Id', 'Document', 'First Name', 'Last Name', 'Email', 'Bills'])
         for c in Client.objects.all():
-            result.append({
-                'id': c.pk,
-                'document': c.document,
-                'first_name': c.first_name,
-                'last_name': c.last_name,
-                'email': c.email,
-                'bills_total': len(self.getBillsByUser(pk=c.pk))
-            })
-        return HttpResponse(result)
+            writer.writerow([
+                c.pk, 
+                c.document, 
+                c.first_name, 
+                c.last_name, 
+                c.email, 
+                len(self.getBillsByUser(pk=c.pk))
+            ])
+            
+        return response
 
     def getBillsByUser(self, pk):
         return Bill.objects.filter(client_id=pk)
