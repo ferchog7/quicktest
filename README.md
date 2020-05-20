@@ -26,11 +26,11 @@ You can use the following Postman collection:
 
 ## Users
 
-Use the url 'http://127.0.0.1:8080/users/' to generate your users with the access to API, You need superuser credentials.
+Use the url in your browser http://127.0.0.1:8080/users/ to generate your users with the access to API, You need superuser credentials.
 
 ## Login
 
-Use the url 'http://127.0.0.1:8080/login/' to generate your token with the access data given to the generated users.
+Use the url http://127.0.0.1:8080/login/ to generate your token with the access data given to the generated users.
 
 ## Endpoints
 
