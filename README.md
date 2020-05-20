@@ -24,9 +24,13 @@ You can use the following Postman collection:
 
     https://www.getpostman.com/collections/c4ef915ff4934f22ba44
 
+## Users
+
+Use the url 'http://127.0.0.1:8080/users/' to generate your users with the access to API, You need superuser credentials.
+
 ## Login
 
-Use the url 'http://localhost:8080/login' to generate your token with the access data given to the generated superuser.
+Use the url 'http://127.0.0.1:8080/login/' to generate your token with the access data given to the generated users.
 
 ## Endpoints
 
