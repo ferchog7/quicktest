@@ -42,7 +42,7 @@ Use the url http://127.0.0.1:8080/login/ to generate your token with the access 
 
 ## Endpoints
 
-- clients/
-- products/
 - bills/
-- report/
+- clients/
+- clients/report/
+- products/
