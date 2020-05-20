@@ -26,7 +26,15 @@ You can use the following Postman collection:
 
 ## Users
 
-Use the url in your browser http://127.0.0.1:8080/users/ to generate your users with the access to API, You need superuser credentials.
+Use the endpoint or in the browser http://127.0.0.1:8080/users/ to generate your users with the access to API, You need superuser credentials.
+
+JSON create user, example:
+`{
+    "username": "pruebas2",
+    "email": "pruebas2@pruebas.com",
+    "password": "123456"
+    "groups": []
+}`
 
 ## Login
 
